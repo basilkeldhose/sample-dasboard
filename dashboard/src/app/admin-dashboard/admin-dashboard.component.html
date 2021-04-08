@@ -1,0 +1,30 @@
+<main class="dashboard">
+
+    <div class="row">
+        <div class="col-lg-2 col-md-3 col-sm-12 left-container">
+            <img src="../../assets/logo-dashboard.png" alt="logo">
+            <ul>
+                <li>
+                    <a class="btn" (click)="Products()">Products</a>
+                </li>
+                <li>
+                    <a class="btn">Category</a>
+                </li>
+                <li>
+                    <a class="btn">Brand</a>
+                </li>
+                <li>
+                    <a class="btn">Banner</a>
+                </li>
+                <li>
+                    <a class="btn">Logout</a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-lg-10 col-md-9 col-sm-12 right-container">
+            <div class="container">
+            </div>
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</main>
