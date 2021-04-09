@@ -1,0 +1,263 @@
+.product-list{
+    margin-top:12px;
+}
+.product-list .card{
+    margin-top: 12px;
+    padding: 20px 12px;
+    border-radius: 0px;
+    box-shadow: 1px 2px 3px 1px lightgray;
+}
+.product-list .card .card-header{
+    background-color: white;
+    border-bottom: 0px;
+    display: flex;
+}
+.product-list .card .card-header .btn{
+    color: black;
+    text-decoration: none;
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+}
+.product-list .card .card-header .btn h3{
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 12px;
+    text-transform: capitalize;
+}
+.product-list .card .approved-btn{
+    height: 40px;
+    width: 150px;
+    border-radius: 50px;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: lightgrey;
+    font-weight: 600;
+    margin-left: 200px;
+}
+.product-list .card .approved-btn-color{
+    height: 40px;
+    width: 120px;
+    padding: 10px 24px;
+    font-size: 16px;
+    border-radius: 50px;
+    border: none;
+    font-weight: 600;
+    margin-left: 230px;
+    background-color: #f1e751b2;
+}
+/*Slider button*/
+.product-list .card .switch {
+    margin-top: 10px;
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 24px;
+    margin-left: 620px;
+  }
+  
+  .product-list .card .switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  .product-list .card .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .product-list .card .slider:before {
+    position: absolute;
+    content: "";
+    top: 0px;
+    height: 24px;
+    width: 24px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .product-list .card input:checked + .slider {
+    background-color: #f1e751b2;
+  }
+  
+  .product-list .card input:focus + .slider {
+    box-shadow: 0 0 1px  #f1e751b2;
+  }
+  
+  .product-list .card  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  .product-list .card  .slider.round {
+    border-radius: 34px;
+  }
+  .product-list .card .slider.round:before {
+    border-radius: 50%;
+  }
+ /*Side dropdown*/
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  .dropdown .dropdown-button{
+    margin-left: 40px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: darkgray;
+    box-shadow: 0px 16px 0px darkgray, 0px 32px 0px darkgray;
+  }
+  .dropdown-content {
+    margin-top: 40px;
+    cursor: pointer;
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 100px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    border-bottom: 1px solid lightgray;
+  }
+  .dropdown-content a:hover {
+      background-color: #ddd;
+    }
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+/*Card boady styles*/
+
+.product-list .card .card-body{
+    position: relative;
+}
+.product-list .card .card-body .price-category {
+    display: flex;
+    width: 100%;
+    padding-bottom: 30px;
+    border-bottom: 1px solid lightgray;
+}
+.product-list .card .card-body .price-category h4{
+    font-size: 16px;
+    font-weight: 600;
+    padding:9px 12px;
+    height: 40px;
+    border-radius: 50px;
+    font-weight: 600;
+    margin-left: 50px;
+    background-color:  #f8d9e3b2;
+}
+.product-list .card .card-body .details{
+margin-top: 24px;
+background-color: #f6e4eab2;
+}
+.product-list .card .card-body .details h3{
+    font-size: 16px;
+    text-transform: capitalize;
+    margin-top: 12px;
+    padding: 0px 12px;
+    font-weight: 500;
+}
+.product-list .card .card-body .details span{
+    font-size: 17px;
+}
+
+
+/*Responsive css*/
+
+/* Large tablets Tablets like Ipad Pro */
+@media screen and (min-width: 960px) and (max-width: 1300px){
+    .product-list .card .approved-btn{
+        margin-left: 50px;
+        width: 150px;
+    }
+    .product-list .card .approved-btn-color{
+        margin-left: 50px;
+        width: 120px;
+    }
+    .product-list .card .switch{
+        margin-left: 300px;
+    }
+    .product-list .card .card-body .price-category h4{
+        margin-left: 5px;
+        padding: 6px 20px;
+        height: 50px;
+    }
+}
+/* Small Tablets */
+@media screen and (min-width: 480px) and (max-width: 960px){
+    .product-list .card .card-header .btn h3{
+        margin-top: 0px;
+    }
+    .product-list .card .approved-btn{
+        margin-left: 20px;
+        width: 150px;
+    }
+    .product-list .card .approved-btn-color{
+        margin-left: 50px;
+        width: 120px;
+    }
+    .product-list .card .switch{
+        margin-left: 80px;
+    }
+    .product-list .card .card-body .price-category{
+        display: block;
+    }
+    .product-list .card .card-body .price-category h4{
+        margin-left: 5px;
+        padding: 15px 20px;
+        height: 50px;
+        width: 100%;
+    }
+}
+/* Mobile devices */
+@media only screen and (max-width: 480px){
+    .product-list .card .card-header .btn h3{
+        margin-top: 0px;
+    }
+    .product-list .card .approved-btn{
+        margin-left: 0px;
+        width: 150px;
+        font-size: 14px;
+        padding: 12px 15px;
+    }
+    .product-list .card .approved-btn-color{
+        margin-left: 0px;
+        width: 120px;
+    }
+    .product-list .card .switch{
+        margin-left: 10px;
+    }
+    .product-list .card .card-body .price-category{
+        display: block;
+    }
+    .product-list .card .card-body .price-category h4{
+        margin-left: 5px;
+        padding: 15px 20px;
+        height: 50px;
+        width: 100%;
+    }
+    .dropdown .dropdown-button{
+        margin-left: 10px;
+    }
+
+}
