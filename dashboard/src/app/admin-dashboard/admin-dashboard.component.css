@@ -1,0 +1,85 @@
+.dashboard{
+    position:relative;
+    width: 100%;
+    overflow-x: hidden;
+}
+/*Dashboard Side Navigation*/
+.dashboard .row .left-container{
+    background-color: rgba(90, 253, 139, 0.603);
+    height: 100vh;
+}
+.dashboard .row .left-container img{
+    max-width: 200px; 
+    display: flex;
+    justify-content:center;
+    text-align: center;
+    margin: auto;
+    margin-left: 60px;
+    align-items: center;
+}
+.dashboard .row .left-container ul{
+    margin-top: 24px;
+    
+}
+.dashboard .row .left-container ul li{
+    margin-top: 12px;
+    list-style: none;
+}
+.dashboard .row .left-container ul li a{
+    background-color: rgb(10, 34, 15); 
+    width: 250px; 
+    height: 40px;
+    border: none;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    color: white;
+    margin: auto;
+    margin-left: 0px;
+}
+
+/*Responsive css*/
+
+/* Large tablets Tablets like Ipad Pro */
+@media screen and (min-width: 960px) and (max-width: 1300px){
+    .dashboard .row .left-container img{
+        max-width: 120px; 
+        margin-left: 23px;
+    } 
+    .dashboard .row .left-container ul li a{
+        width: 110px; 
+        margin-left: 0px;
+    }
+}
+/* Small Tablets */
+@media screen and (min-width: 480px) and (max-width: 960px){
+    .dashboard .row .left-container img{
+        max-width: 120px; 
+        margin-left: 23px;
+    } 
+    .dashboard .row .left-container ul li a{
+        width: 130px; 
+        margin-left: 0px;
+    }
+}
+/* Mobile devices */
+@media only screen and (max-width: 480px){
+    .dashboard .row .left-container{
+        height: 100%;
+    }
+    .dashboard .row .left-container img{
+        margin-top: 5px;
+        margin: auto;
+    }.dashboard .row .left-container ul{
+        margin-top: 12px;
+    }
+
+    .dashboard .row .left-container ul li a{
+        width: 90%;
+        height: 50px;
+        padding: 10px 0px;
+        margin-left: 5px;
+        margin-top: 12px;
+    }
+}
