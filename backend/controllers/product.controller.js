@@ -57,6 +57,7 @@ module.exports.singleproduct = (req, res) => {
         }
     })
 }
+
 /***************UPDATE PRODUCT DETALS***************************/
 
 module.exports.updatelist=(req,res)=>{
@@ -86,6 +87,7 @@ module.exports.updatelist=(req,res)=>{
     });   
 }
 /********************DELETE PRODUCT BASED ON PRODUCT ID*********************/
+
 module.exports.delete=(req,res)=>{
     if(!ObjectId.isValid(req.params.id))
     return res.status(400).send("no product details with this productid");

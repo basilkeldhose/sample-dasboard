@@ -1,35 +1,43 @@
 <main class="product-list">
+    <router-outlet></router-outlet>
     <div class="accordion" id="productlist">
-        <div class="card" *ngFor="let item of productList; let i=index">
+        <div class="card" *ngFor="let item of productservice.products; let i=index;">
             <div class="card-header" id="products">
-                <h2 class="mb-0">
-                    <button class="btn btn-link" type="button" data-toggle="collapse" 
-                        aria-expanded="true" aria-controls="productdetails" (click)="open(i)">
-                        <h3>{{item.name}}</h3>
-                    </button>
-                </h2>
-                <h4 class="approved-btn" *ngIf="!show">Not approved</h4>
-                <h4 class="approved-btn-color" *ngIf="show">approved</h4>
-                <label class="switch" >
-                    <input type="checkbox" (click)=Toggle(i)>
-                    <span class="slider round"></span>
-                </label>
-                <div class="dropdown">
-                    <div class="dropdown-button"></div>
-                    <div class="dropdown-content">
-                        <a (click)="update()">Update</a>
-                        <a (click)=delete()>Delete</a>
-                      </div>
-                </div>
-                
+                <div class="row">
+                    <div class="col-lg-4 col-md-12 col-sm-12">
+                        <h2 >
+                            <button class="btn btn-link" type="button" data-toggle="collapse" 
+                                aria-expanded="true" aria-controls="productdetails" (click)="open(1)">
+                                <h3>{{item.productname}}</h3>
+                            </button>
+                        </h2>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <h4 class="approved-btn" *ngIf="!show">Not approved</h4>
+                        <h4 class="approved-btn-color" *ngIf="show">approved</h4>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <label class="switch" >
+                            <input type="checkbox" (click)=Toggle(i)>
+                            <span class="slider round"></span>
+                        </label>
+                        <div class="dropdown">
+                            <button class="dropdown-button"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></button>
+                            <div class="dropdown-content">
+                                <a (click)="update(item)">Update <i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                                <a (click)=delete(item._id)>Delete <i class="fa fa-trash" aria-hidden="true"></i> </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>  
             </div>
 
             <div  class="collapse show" aria-labelledby="products" data-parent="#productlist" *ngIf="panelExpand">
                 <div class="card-body">
                     <div class="price-category">
-                        <h4>Original price: {{item.originalPrice}}</h4>
-                        <h4>Toatal price: {{item.totalPrice}}</h4>
-                        <h4>Dry clean price: {{item.Dryclean}}</h4>
+                        <h4>Original price: {{item.originalprice}}</h4>
+                        <h4>Toatal price: {{item.totalprice}}</h4>
+                        <h4>Dry clean price: {{item.drycleanprice}}</h4>
                         <h4>Lead price per week: {{item.leadprice}}</h4>
                         <h4>Owner price per week: {{item.ownerprice}}</h4>
                     </div>
@@ -38,11 +46,11 @@
                             <div class="col-lg-6 col-md-6 col-sm-6">
                                 <h3><span>Brand: {{item.brand}}</span></h3>
                                 <h3><span>Category: {{item.category}}</span></h3>
-                                <h3><span>Material:{{item.material}}</span></h3>
+                                <h3><span>Material:{{item.meterial}}</span></h3>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6">
                                 <h3><span>Care: {{item.care}}</span></h3>
-                                <h3><span>Color:{{item. color}}</span></h3>
+                                <h3><span>Color:{{item.color}}</span></h3>
                                 <h3><span>Size: {{item.size}}</span></h3>
                             </div>
                         </div>
