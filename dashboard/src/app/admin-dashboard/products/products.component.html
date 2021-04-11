@@ -7,8 +7,8 @@
                     <div class="col-lg-4 col-md-12 col-sm-12">
                         <h2 >
                             <button class="btn btn-link" type="button" data-toggle="collapse" 
-                                aria-expanded="true" aria-controls="productdetails" (click)="open(item._id)">
-                                <h3>{{item.productname}}</h3>
+                                aria-expanded="true" aria-controls="productdetails">
+                                <h3 (click)="open(item._id)">{{item.productname}}</h3>
                             </button>
                         </h2>
                     </div>

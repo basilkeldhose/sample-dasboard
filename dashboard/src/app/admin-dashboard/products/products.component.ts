@@ -20,6 +20,20 @@ export class ProductsComponent implements OnInit {
     this.refreshuserlist()
   }
 
+  /***********ACORDION OPEN*************/
+
+  open(_id:string){
+    console.log(_id);
+    for(let i=0;i<this.productList.length;i++){
+      if(this.productList[i]._id == _id){
+        this.panelExpand=!this.panelExpand
+      }
+      else{
+        this.panelExpand=this.panelExpand
+      }
+    }
+  }
+
 /************BUTTON TOGGLE************/
 
   Toggle(_id:string){
@@ -29,19 +43,6 @@ export class ProductsComponent implements OnInit {
       }
       else{
         this.show =this.show;
-      }
-    }
-  }
-
-  /***********ACORDION OPEN*************/
-
-  open(_id:string){
-    for(let i=0;i<this.productList.length;i++){
-      if(this.productList[i]._id == _id){
-        this.panelExpand=!this.panelExpand
-      }
-      else{
-        this.panelExpand=this.panelExpand
       }
     }
   }
