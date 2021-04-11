@@ -31,7 +31,6 @@ export class ProductsComponent implements OnInit {
         this.show =this.show;
       }
     }
-    
   }
 
   /***********ACORDION OPEN*************/

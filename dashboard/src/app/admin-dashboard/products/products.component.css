@@ -2,6 +2,7 @@
     margin-top:12px;
 }
 .product-list .card{
+    width: 100%;
     margin-top: 12px;
     padding: 20px 12px;
     border-radius: 0px;
@@ -181,8 +182,8 @@
     background-color:  #f8d9e3b2;
 }
 .product-list .card .card-body .details{
-margin-top: 24px;
-background-color: #f6e4eab2;
+    margin-top: 24px;
+    background-color: #f6e4eab2;
 }
 .product-list .card .card-body .details h3{
     font-size: 16px;
@@ -194,7 +195,6 @@ background-color: #f6e4eab2;
 .product-list .card .card-body .details span{
     font-size: 17px;
 }
-
 
 /*Responsive css*/
 

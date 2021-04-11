@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
+import {environment} from '../../environments/environment'
 import { Products } from "./products"
 import { ProductsComponent } from '../admin-dashboard/products/products.component';
 @Injectable({
@@ -22,20 +23,20 @@ export class ProductsService {
     ownerprice: 0
   }
   products: Products[] | undefined
-  readonly baseURL = "http://localhost:3000/api"
 
   constructor(private http: HttpClient) { }
+
   postproduct(products: Products) {
-    return this.http.post(this.baseURL + '/product', products);
+    return this.http.post(environment.apiBaseUrl + '/product', products);
   }
   getproductList() {
-    return this.http.get(this.baseURL + '/products');
+    return this.http.get(environment.apiBaseUrl + '/products');
   }
   putProduct(products: Products) {
-    return this.http.put(this.baseURL + `/${products._id}`, products);
+    return this.http.put(environment.apiBaseUrl + `/${products._id}`, products);
   }
 
   deleteProduct(_id: string) {
-    return this.http.delete(this.baseURL + `/${_id}`);
+    return this.http.delete(environment.apiBaseUrl + `/${_id}`);
   }
 }

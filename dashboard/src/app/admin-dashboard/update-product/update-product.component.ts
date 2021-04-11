@@ -3,7 +3,6 @@ import { NgForm } from '@angular/forms';
 import {ProductsService} from '../../services/products.service'
 import { ToastrService } from 'ngx-toastr';
 import {Router} from '@angular/router'
-import {Products} from '../../services/products'
 @Component({
   selector: 'app-update-product',
   templateUrl: './update-product.component.html',
