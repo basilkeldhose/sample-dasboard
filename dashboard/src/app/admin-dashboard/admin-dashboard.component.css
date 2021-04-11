@@ -40,8 +40,21 @@
     color: white;
     margin-right: 20px;
 }
+.dashboard .row .left-container ul li a:hover{
+    background-color: rgb(34, 77, 43);   
+}
 .dashboard .row .right-container{
     position: relative;
+}
+.dashboard .row .right-container .add-product{
+    margin-top: 12px;
+    width: 200px;
+    height: 40px;
+    border: none; 
+    background-color: rgb(10, 34, 15);
+    color: white;
+    font-weight: 600; 
+    margin-left: 1070px;
 }
 /*Responsive css*/
 
@@ -62,10 +75,15 @@
         width: 110px; 
         margin-left: 0px;
     }
+    .dashboard .row .right-container .add-product{
+        margin-left: 600px;
+    }
 }
 /* Small Tablets */
 @media screen and (min-width: 480px) and (max-width: 960px){
-    
+    .dashboard .row .right-container .add-product{
+        margin-left: 320px;
+    }
     .dashboard .row .left-container img{
         max-width: 120px; 
         margin-left: 23px;
@@ -77,6 +95,9 @@
 }
 /* Mobile devices */
 @media only screen and (max-width: 480px){
+    .dashboard .row .right-container .add-product{
+        margin-left: 100px;
+    }
     .dashboard .row .left-container .card{
         background-color: rgba(90, 253, 139, 0.603);
         height: 100%;

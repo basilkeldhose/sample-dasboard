@@ -10,20 +10,36 @@ import {Products} from "../../services/products"
 })
 export class ProductsComponent implements OnInit {
   droplist =false
-show:boolean =false
-panelExpand:boolean=false
+  show:boolean =false
+  products=new Products
+  productList =Array()
+  panelExpand:boolean=false
   constructor(public productservice:ProductsService,public toastr: ToastrService,private router:Router) { }
 
   ngOnInit(): void {
     this.refreshuserlist()
   }
 
-  Toggle(i:number){
-    this.show =!this.show;
+  Toggle(_id:string){
+    for(let i=0;i<this.productList.length;i++){
+      if(this.productList[i]._id == _id){
+        this.show =!this.show;
+      }
+      else{
+        this.show =this.show;
+      }
+    }
+    
   }
-  open(i:number){
-    console.log(i)
-      this.panelExpand=!this.panelExpand
+  open(_id:string){
+    for(let i=0;i<this.productList.length;i++){
+      if(this.productList[i]._id == _id){
+        this.panelExpand=!this.panelExpand
+      }
+      else{
+        this.panelExpand=this.panelExpand
+      }
+    }
   }
   dropdown(){
     this.droplist=!this.droplist
@@ -32,6 +48,8 @@ panelExpand:boolean=false
   refreshuserlist() {
     this.productservice.getproductList().subscribe((res) => {
       this.productservice.products = res as Products[]
+      this.productList =[...this.productservice.products]
+      console.log(this.productList)
     });
   }
   /*********DELETE PRODUCT*********/

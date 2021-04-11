@@ -20,6 +20,9 @@ const routes: Routes = [
         path:"products",component:ProductsComponent,
       },
       {
+        path:"addproduct",component:UpdateProductComponent
+      },
+      {
         path:"update",component:UpdateProductComponent
       }
     ]

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import {ProductsService} from '../../services/products.service'
 import { ToastrService } from 'ngx-toastr';
+import {Router} from '@angular/router'
 import {Products} from '../../services/products'
 @Component({
   selector: 'app-update-product',
@@ -10,23 +11,23 @@ import {Products} from '../../services/products'
 })
 export class UpdateProductComponent implements OnInit {
 
-  constructor( public productservice:ProductsService,private toastr:ToastrService) { }
+  constructor( public productservice:ProductsService,private toastr:ToastrService,public router:Router) { }
 
   ngOnInit(): void {
     this.resetForm()
-    // this.productservice.selectedProducts=products
   }
 onSubmit(form:NgForm){
   if (form.value._id == "") {
     this.productservice.postproduct(form.value).subscribe((res) => {
       this.toastr.success('product added');
-      this.resetForm()
+      this.resetForm(form)
     })
   }
   else {
     this.productservice.putProduct(form.value).subscribe((res) => {
       this.toastr.success('product updated');
-      this.resetForm()
+      this.resetForm(form)
+      // this.router.navigateByUrl("dashboard/products");
     })
   }
 }
