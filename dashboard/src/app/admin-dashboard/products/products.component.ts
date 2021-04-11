@@ -20,6 +20,8 @@ export class ProductsComponent implements OnInit {
     this.refreshuserlist()
   }
 
+/************BUTTON TOGGLE************/
+
   Toggle(_id:string){
     for(let i=0;i<this.productList.length;i++){
       if(this.productList[i]._id == _id){
@@ -31,6 +33,9 @@ export class ProductsComponent implements OnInit {
     }
     
   }
+
+  /***********ACORDION OPEN*************/
+
   open(_id:string){
     for(let i=0;i<this.productList.length;i++){
       if(this.productList[i]._id == _id){
@@ -41,10 +46,9 @@ export class ProductsComponent implements OnInit {
       }
     }
   }
-  dropdown(){
-    this.droplist=!this.droplist
-  }
+
   /*********REFRESH PRODUCTLIST********/
+
   refreshuserlist() {
     this.productservice.getproductList().subscribe((res) => {
       this.productservice.products = res as Products[]
@@ -52,7 +56,9 @@ export class ProductsComponent implements OnInit {
       console.log(this.productList)
     });
   }
+
   /*********DELETE PRODUCT*********/
+
   delete(_id:string){
     if(confirm("are you sure to delete this product record")==true){
       this.productservice.deleteProduct(_id).subscribe((res)=>{
@@ -61,7 +67,9 @@ export class ProductsComponent implements OnInit {
       });
     }
   }
+
   /***********UPDATE************/
+
   update(products:Products){
     this.productservice.selectedProducts = products;
     this.router.navigateByUrl("dashboard/update");

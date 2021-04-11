@@ -16,6 +16,9 @@ export class UpdateProductComponent implements OnInit {
   ngOnInit(): void {
     this.resetForm()
   }
+
+/************FORM SUMBMIT *****************/
+
 onSubmit(form:NgForm){
   if (form.value._id == "") {
     this.productservice.postproduct(form.value).subscribe((res) => {
@@ -31,6 +34,9 @@ onSubmit(form:NgForm){
     })
   }
 }
+
+/************RESET FORM**************/
+
 resetForm(form?:NgForm){
 if(form){
   form.reset()
