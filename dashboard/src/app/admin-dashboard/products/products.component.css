@@ -2,15 +2,21 @@
     margin-top:12px;
 }
 .product-list .card{
+    width: 100%;
     margin-top: 12px;
     padding: 20px 12px;
     border-radius: 0px;
-    box-shadow: 1px 2px 3px 1px lightgray;
+    border-bottom: 1px solid lightgray;
+    box-shadow: 1px 1px 1px 1px lightgray;
 }
 .product-list .card .card-header{
     background-color: white;
-    border-bottom: 0px;
+    border-bottom: 0px;   
+}
+.product-list .card .card-header .row{
     display: flex;
+    width: 100%;
+    justify-content: space-between;
 }
 .product-list .card .card-header .btn{
     color: black;
@@ -34,7 +40,8 @@
     font-size: 16px;
     background-color: lightgrey;
     font-weight: 600;
-    margin-left: 200px;
+    margin-left: 0px;
+    text-align: center;
 }
 .product-list .card .approved-btn-color{
     height: 40px;
@@ -44,7 +51,8 @@
     border-radius: 50px;
     border: none;
     font-weight: 600;
-    margin-left: 230px;
+    margin-left: 30px;
+    text-align: center;
     background-color: #f1e751b2;
 }
 /*Slider button*/
@@ -54,13 +62,14 @@
     display: inline-block;
     width: 60px;
     height: 24px;
-    margin-left: 620px;
+    margin-left: 200px;
   }
   
   .product-list .card .switch input { 
     opacity: 0;
     width: 0;
     height: 0;
+    right: 0;
   }
   .product-list .card .slider {
     position: absolute;
@@ -110,24 +119,27 @@
   }
  /*Side dropdown*/
   .dropdown {
+      margin-left: 50px;
     position: relative;
     display: inline-block;
+    right: 0;
   }
   .dropdown .dropdown-button{
-    margin-left: 40px;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: darkgray;
-    box-shadow: 0px 16px 0px darkgray, 0px 32px 0px darkgray;
+      height: 50px;
+      background-color: white;
+      border: none;
+      font-size: 30px;
+      line-height: 36px;
+      color: rgb(107, 107, 107);
+
   }
   .dropdown-content {
-    margin-top: 40px;
+    margin-top: 0px;
     cursor: pointer;
     display: none;
     position: absolute;
     background-color: #f1f1f1;
-    min-width: 100px;
+    min-width: 110px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
   }
@@ -138,13 +150,16 @@
     display: block;
     border-bottom: 1px solid lightgray;
   }
+  .dropdown-content i{
+      margin-left: 10px;
+  }
   .dropdown-content a:hover {
       background-color: #ddd;
     }
 
 .dropdown:hover .dropdown-content {
-    display: block;
-}
+        display: block;
+    }
 /*Card boady styles*/
 
 .product-list .card .card-body{
@@ -167,8 +182,8 @@
     background-color:  #f8d9e3b2;
 }
 .product-list .card .card-body .details{
-margin-top: 24px;
-background-color: #f6e4eab2;
+    margin-top: 24px;
+    background-color: #f6e4eab2;
 }
 .product-list .card .card-body .details h3{
     font-size: 16px;
@@ -181,43 +196,56 @@ background-color: #f6e4eab2;
     font-size: 17px;
 }
 
-
 /*Responsive css*/
 
 /* Large tablets Tablets like Ipad Pro */
 @media screen and (min-width: 960px) and (max-width: 1300px){
     .product-list .card .approved-btn{
-        margin-left: 50px;
+        margin-left: 0px;
         width: 150px;
     }
     .product-list .card .approved-btn-color{
-        margin-left: 50px;
+        margin-left: 80px;
         width: 120px;
     }
     .product-list .card .switch{
-        margin-left: 300px;
+        margin-left: 70px;
     }
     .product-list .card .card-body .price-category h4{
         margin-left: 5px;
         padding: 6px 20px;
         height: 50px;
     }
+    .dropdown {
+        top: 0;
+        margin-top:0px ;
+        margin-left: 60px;
+    }
+    .product-list .card .card-header .toggle{
+        display: flex;
+    }
 }
 /* Small Tablets */
 @media screen and (min-width: 480px) and (max-width: 960px){
+    .product-list .card .card-header .row{
+        display: flex;
+        width: 100%;
+        justify-content: space-evenly;
+    }
     .product-list .card .card-header .btn h3{
         margin-top: 0px;
     }
     .product-list .card .approved-btn{
-        margin-left: 20px;
+        margin-left: 10px;
         width: 150px;
+
     }
     .product-list .card .approved-btn-color{
-        margin-left: 50px;
+        margin-left: 30px;
         width: 120px;
     }
     .product-list .card .switch{
-        margin-left: 80px;
+        margin-left: 50px;
     }
     .product-list .card .card-body .price-category{
         display: block;
@@ -227,22 +255,35 @@ background-color: #f6e4eab2;
         padding: 15px 20px;
         height: 50px;
         width: 100%;
+    }
+    .dropdown {
+        margin-right: 30px;
+    }
+    .dropdown-content{
+        width: 110px;
+    } 
+    .product-list .card .card-header .toggle{
+        display: flex;
     }
 }
 /* Mobile devices */
 @media only screen and (max-width: 480px){
     .product-list .card .card-header .btn h3{
         margin-top: 0px;
+        font-size: 13px;
     }
     .product-list .card .approved-btn{
         margin-left: 0px;
         width: 150px;
-        font-size: 14px;
+        font-size: 12px;
         padding: 12px 15px;
+        margin-left: 60px;
     }
     .product-list .card .approved-btn-color{
         margin-left: 0px;
-        width: 120px;
+        width: 102px;
+        font-size: 12px;
+        margin-left: 100px;
     }
     .product-list .card .switch{
         margin-left: 10px;
@@ -256,8 +297,14 @@ background-color: #f6e4eab2;
         height: 50px;
         width: 100%;
     }
+    .dropdown {
+        margin-left:150px;
+    }
+    .dropdown .dropdown-content{
+        margin-right: 30px;
+    }
     .dropdown .dropdown-button{
-        margin-left: 10px;
+        margin-left: 0px;
     }
 
 }

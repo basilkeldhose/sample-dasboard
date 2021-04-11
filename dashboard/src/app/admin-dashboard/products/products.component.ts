@@ -1,41 +1,77 @@
 import { Component, OnInit } from '@angular/core';
-
+import {Router} from "@angular/router"
+import {ProductsService} from "../../services/products.service"
+import { ToastrService } from 'ngx-toastr';
+import {Products} from "../../services/products"
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit {
-productList=[{name:"sample1",
-  originalPrice:300,
-  totalPrice:140,
-  Dryclean:10,
-  leadprice:120,
-  ownerprice:0,
-  brand:"puma",
-  category:"top",
-  material:"cotton",
-  care:"dry clean only",
-  color:"black",
-  size:30
-}]
-show:boolean =false
-panelExpand:boolean=false
-  constructor() { }
+  droplist =false
+  show:boolean =false
+  products=new Products
+  productList =Array()
+  panelExpand:boolean=false
+  constructor(public productservice:ProductsService,public toastr: ToastrService,private router:Router) { }
 
   ngOnInit(): void {
+    this.refreshuserlist()
   }
 
-  Toggle(i:number){
-    this.show =!this.show;
-  }
-  open(i:number){
-    this.panelExpand=!this.panelExpand
-  }
-  delete(){
+/************BUTTON TOGGLE************/
 
+  Toggle(_id:string){
+    for(let i=0;i<this.productList.length;i++){
+      if(this.productList[i]._id == _id){
+        this.show =!this.show;
+      }
+      else{
+        this.show =this.show;
+      }
+    }
   }
-  update(){
+
+  /***********ACORDION OPEN*************/
+
+  open(_id:string){
+    for(let i=0;i<this.productList.length;i++){
+      if(this.productList[i]._id == _id){
+        this.panelExpand=!this.panelExpand
+      }
+      else{
+        this.panelExpand=this.panelExpand
+      }
+    }
+  }
+
+  /*********REFRESH PRODUCTLIST********/
+
+  refreshuserlist() {
+    this.productservice.getproductList().subscribe((res) => {
+      this.productservice.products = res as Products[]
+      this.productList =[...this.productservice.products]
+      console.log(this.productList)
+    });
+  }
+
+  /*********DELETE PRODUCT*********/
+
+  delete(_id:string){
+    if(confirm("are you sure to delete this product record")==true){
+      this.productservice.deleteProduct(_id).subscribe((res)=>{
+        this.refreshuserlist();
+        this.toastr.success('delete sucessfull!');
+      });
+    }
+  }
+
+  /***********UPDATE************/
+
+  update(products:Products){
+    this.productservice.selectedProducts = products;
+    this.router.navigateByUrl("dashboard/update");
 
   }
 }

@@ -12,7 +12,14 @@ export class AdminDashboardComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+/**********PRODUCT NAVIGATION*********/
+
 Products(){
 this.router.navigateByUrl("dashboard/products")
+}
+/***********ADD PRODUCT NAIGATION**************/
+addProduct(){
+  this.router.navigateByUrl("dashboard/addproduct")
 }
 }

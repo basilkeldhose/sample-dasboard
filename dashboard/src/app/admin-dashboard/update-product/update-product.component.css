@@ -1,0 +1,69 @@
+/**********Main Form***************/
+.card{
+    margin-top: 24px;
+    padding: 24px 200px;
+    box-shadow: 2px 3px 2px 1px lightgrey;
+    width: 100%;
+    margin-bottom: 24px;
+}
+.card .main{
+    margin-top: 12px;
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+}
+.card form{
+    position: relative;
+}
+.row .input-feild{
+    position: relative;
+    display: block;
+}
+.row .input-feild label{
+    font-size: 16px;
+    font-weight: 600;
+    margin-top:12px ;
+}
+.row .input-feild label .red-text{
+color: red;
+}
+.row .input-feild .validation-msessage{
+    color: red;
+}
+.row .input-feild input{
+    display: block;
+    width: 100%;
+    height: 50px;
+    text-transform: capitalize;
+    border: none;
+    border-bottom: 1px solid lightgrey;
+}
+.btn{
+    width: 150px;
+    height: 50px;
+    background-color:  rgb(10, 34, 15); ;
+    color: white;
+    float: right;
+    border: none;
+    border-radius: 0px;
+    font-weight: 600;
+    margin: 24px 12px;
+}
+/* Large tablets Tablets like Ipad Pro */
+@media screen and (min-width: 960px) and (max-width: 1300px){
+    .card{
+        padding: 12px 100px;
+    }
+}
+/* Small Tablets */
+@media screen and (min-width: 480px) and (max-width: 960px){
+    .card{
+        padding: 12px 70px;
+    }
+}
+/* Mobile devices */
+@media only screen and (max-width: 480px){
+    .card{
+        padding: 12px 12px;
+    }
+}

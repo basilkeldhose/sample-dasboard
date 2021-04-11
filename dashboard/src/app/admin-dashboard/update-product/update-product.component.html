@@ -1,0 +1,138 @@
+<main>
+<div class="card">
+    <h2 class="main">Add New Product</h2>
+    <form #productForm="ngForm" (ngSubmit)="onSubmit(productForm)">
+        <input type="hidden" name="_id" #_id='ngModel' [(ngModel)]="productservice.selectedProducts._id">
+        <div class="row">
+            <div class="input-feild col-sm-12">
+                <label>Product Name:
+                    <label class="red-text">*</label>
+                </label>
+                <input type="text" name="productname" #productname='ngModel'
+                    [(ngModel)]="productservice.selectedProducts.productname" placeholder="enter productname" required>
+                <span class="validation-msessage" *ngIf="productname.touched && !productname.valid">Enter product
+                    name</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-feild col-sm-12">
+                <label>Brand Name:
+                    <label class="red-text">*</label>
+                </label>
+                <input type="text" name="brand" #brand='ngModel' [(ngModel)]="productservice.selectedProducts.brand"
+                    placeholder="enter brand name" required>
+                <span class="validation-msessage" *ngIf="brand.touched && !brand.valid">Enter brand name</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-feild col-sm-12">
+                <label>Category:
+                    <label class="red-text">*</label>
+                </label>
+                <input type="text" name="category" #category='ngModel'
+                    [(ngModel)]="productservice.selectedProducts.category" placeholder="enter category" required>
+                <span class="validation-msessage" *ngIf="category.touched && !category.valid">Enter category name</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-feild col-sm-12">
+                <label>Material:
+                    <label class="red-text">*</label>
+                </label>
+                <input type="text" name="meterial" #meterial='ngModel'
+                    [(ngModel)]="productservice.selectedProducts.meterial" placeholder="enter material" required>
+                <span class="validation-msessage" *ngIf="meterial.touched && !meterial.valid">Enter material name</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-feild col-sm-12">
+                <label>Care:
+                    <label class="red-text">*</label>
+                </label>
+                <input type="text" name="care" #care='ngModel' [(ngModel)]="productservice.selectedProducts.care"
+                    placeholder="enter care mathod" required>
+                <span class="validation-msessage" *ngIf="care.touched && !care.valid">Enter careing method eg:DRY CLEAN
+                    ONLY</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-feild col-sm-12">
+                <label>Color:
+                    <label class="red-text">*</label>
+                </label>
+                <input type="text" name="color" #color='ngModel' [(ngModel)]="productservice.selectedProducts.color"
+                    placeholder="enter color" required>
+                <span class="validation-msessage" *ngIf="color.touched && !color.valid">Enter product color</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-feild col-sm-6">
+                <label>Size:
+                    <label class="red-text">*</label>
+                </label>
+                <input type="number" name="size" #size='ngModel' [(ngModel)]="productservice.selectedProducts.size"
+                    placeholder="enter size" required>
+                <span class="validation-msessage" *ngIf="size.touched && !size.valid">Enter size</span>
+            </div>
+            <div class="input-feild col-sm-6">
+                <label>Original Price:
+                    <label class="red-text">*</label>
+                </label>
+                <input type="number" name="originalprice" #originalprice='ngModel'
+                    [(ngModel)]="productservice.selectedProducts.originalprice" placeholder="enter original price"
+                    required>
+                <span class="validation-msessage" *ngIf="originalprice.touched && !originalprice.valid">Enter original
+                    price</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-feild col-sm-6">
+                <label>Total Price:
+                    <label class="red-text">*</label>
+                </label>
+                <input type="number" name="totalprice" #totalprice='ngModel'
+                    [(ngModel)]="productservice.selectedProducts.totalprice" placeholder="enter total price" required>
+                <span class="validation-msessage" *ngIf="totalprice.touched && !totalprice.valid">Enter total
+                    price</span>
+            </div>
+            <div class="input-feild col-sm-6">
+                <label>Dry Clean Price:
+                    <label class="red-text">*</label>
+                </label>
+                <input type="number" name="drycleanprice" #drycleanprice='ngModel'
+                    [(ngModel)]="productservice.selectedProducts.drycleanprice" placeholder="enter dry clean price"
+                    required>
+                <span class="validation-msessage" *ngIf="drycleanprice.touched && !drycleanprice.valid">Enter Dry clean
+                    price</span>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-feild col-sm-6">
+                <label>Lead Price:
+                    <label class="red-text">*</label>
+                </label>
+                <input type="number" name="leadprice" #leadprice='ngModel'
+                    [(ngModel)]="productservice.selectedProducts.leadprice" placeholder="enter lead price" required>
+                <span class="validation-msessage" *ngIf="leadprice.touched && !leadprice.valid">Enter lead price</span>
+
+            </div>
+            <div class="input-feild col-sm-6">
+                <label>Owner Price:
+                    <label class="red-text">*</label>
+                </label>
+                <input type="number" name="ownerprice" #ownerprice='ngModel'
+                    [(ngModel)]="productservice.selectedProducts.ownerprice" placeholder="enter owner price" required>
+                <span class="validation-msessage" *ngIf="ownerprice.touched && !ownerprice.valid">Enter Owner price</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <button class="btn btn-custom right" [disabled]='!productForm.valid'> Submit</button>
+                <button class="btn btn-custom right" (click)=resetForm(productForm)>Reset</button>
+            </div>
+        </div>
+    </form>
+
+</div>
+</main>
